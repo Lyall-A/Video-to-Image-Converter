@@ -35,7 +35,7 @@ const convertedDir = `${resolve(dirname, '..')}\\Converted`;
         let lastFrame = 0;
         let watch = fs.watch(`${convertedDir}\\${fileName}`, (event, filename) => {
             if (!filename) return;
-            if (!filename.startsWith("Frame ") return;
+            if (!filename.startsWith("Frame ")) return;
             let frame = filename.split("Frame ")[1].split(".")[0];
             if (lastFrame === frame) return;
             console.log(`Frame ${frame} out of ${frames} completed`)
