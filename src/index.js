@@ -34,8 +34,11 @@ const convertedDir = `${resolve(dirname, '..')}\\Converted`;
         if (!err) frames = data.streams[0].nb_frames;
         let lastFrame = 0;
         let watch = fs.watch(`${convertedDir}\\${fileName}`, (event, filename) => {
+            if (!filename) return;
+            if (!filename.startsWith("Frame ") return;
             let frame = filename.split("Frame ")[1].split(".")[0];
-            if (lastFrame !== frame) if (filename) if (filename.startsWith("Frame ")) console.log(`Frame ${frame} out of ${frames} completed`)
+            if (lastFrame === frame) return;
+            console.log(`Frame ${frame} out of ${frames} completed`)
             lastFrame = frame;
         });
         fluentFfmpeg(location).save(`${convertedDir}\\${fileName}\\Frame %d.png`).on('end', () => { watch.close(); return console.log("Complete") }).on('error', (err) => { watch.close(); return console.log(`Failed\n${err}`) });
