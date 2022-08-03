@@ -1,0 +1,22 @@
+{
+  "name": "video-to-image-converter",
+  "version": "1.0.0",
+  "description": "Converts videos to images using FFmpeg",
+  "bin": "src/index.js",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "keywords": [
+    "ffmpeg",
+    "converter"
+  ],
+  "author": "Lyall A",
+  "license": "ISC",
+  "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
+    "@ffprobe-installer/ffprobe": "^1.4.1",
+    "fluent-ffmpeg": "^2.1.2",
+    "prompts": "^2.4.2"
+  }
+}
