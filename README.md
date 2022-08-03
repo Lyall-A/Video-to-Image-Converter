@@ -1,2 +1,1 @@
-# video-to-image-converter
-Converts videos to images using FFmpeg
+NODE.JS IS REQUIRED TO RUN THIS! INSTALL HERE: https://nodejs.org/en/
